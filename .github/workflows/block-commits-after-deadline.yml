@@ -1,0 +1,18 @@
+name: Block Commits After Deadline
+
+on: push
+
+jobs:
+  check-deadline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deadline in local timezone
+        run: |
+          DEADLINE="2025-01-31 10:09:59"
+          TZ="America/Mexico_City"
+          NOW=$(date +"%Y-%m-%d %H:%M:%S")
+          if [[ "$NOW" > "$DEADLINE" ]]; then
+            echo "Push rejected: Deadline passed."
+            exit 1
+          fi
+
