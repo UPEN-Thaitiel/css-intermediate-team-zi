@@ -4,11 +4,19 @@ Given the existing code below, can you write some code so that their values are 
     var a = "3";
     var b = "8";
 
-So that the variable a holds the value "8".
+So that the variable a holds the value "8", And the variable b holds the value "3".*/
+function test_2(){
+    var x = "3";
+    var y = "4";
 
-And the variable b holds the value "3".
+    var temp = x;
+    x = y;
+    y = temp;
 
-When the code is run, it should output:
+    console.log("x is " + x);
+    console.log("y is " + y);
+}
+/* When the code is run, it should output:
 
 a is 8
 
@@ -26,6 +34,8 @@ You should NOT redeclare the variables a and b.
 function test() {
     var a = "3";
     var b = "8";
+
+
     
 /***********Do not change the code above 👆*******/
 //Write your code on lines 7 - 9:
